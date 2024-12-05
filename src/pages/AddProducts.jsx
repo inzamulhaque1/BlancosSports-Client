@@ -1,10 +1,9 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const AddProduct = () => {
-  const loggedInUser = {
-    email: "user@example.com", // Replace with actual user data
-    name: "John Doe", // Replace with actual user data
-  };
+  const { user } = useContext(AuthContext); // Get the logged-in user from AuthContext
 
   const handleAddProduct = (event) => {
     event.preventDefault();
@@ -30,12 +29,13 @@ const AddProduct = () => {
       customization,
       processingTime,
       stockStatus,
+      userEmail: user?.email, // Assign user email dynamically
+      userName: user?.displayName, // Assign user name dynamically
     };
 
     console.log(newProduct);
 
-    // send data to server
-
+    // Send data to the server
     fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
@@ -45,7 +45,6 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
@@ -58,24 +57,22 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
-      <h2 className="text-2xl font-bold mb-6 text-center">Add New Product</h2>
+    <div className="max-w-4xl mx-auto p-6 mt-4 bg-white shadow-md rounded-md">
+      <h2 className="text-2xl font-bold mb-6 text-center dark:text-black">Add New Product</h2>
       <form
         onSubmit={handleAddProduct}
         className="space-y-4"
-        method="POST"
-        action="/addProduct"
       >
         {/* Image Upload */}
         <div>
-          <label htmlFor="image" className="block text-sm font-medium">
+          <label htmlFor="image" className=" dark:text-black block text-sm font-medium">
             Image
           </label>
           <input
             type="text"
             id="image"
             name="image"
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            className="mt-1 block w-full border  border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             placeholder="Enter an image link"
             required
           />
@@ -83,7 +80,7 @@ const AddProduct = () => {
 
         {/* Item Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium">
+          <label htmlFor="name" className="dark:text-black block text-sm font-medium">
             Item Name
           </label>
           <input
@@ -98,7 +95,7 @@ const AddProduct = () => {
 
         {/* Category Name */}
         <div>
-          <label htmlFor="categoryName" className="block text-sm font-medium">
+          <label htmlFor="category" className="dark:text-black block text-sm font-medium">
             Category Name
           </label>
           <input
@@ -113,7 +110,7 @@ const AddProduct = () => {
 
         {/* Description */}
         <div>
-          <label htmlFor="description" className="block text-sm font-medium">
+          <label htmlFor="description" className="dark:text-black block text-sm font-medium">
             Description
           </label>
           <textarea
@@ -128,7 +125,7 @@ const AddProduct = () => {
 
         {/* Price */}
         <div>
-          <label htmlFor="price" className="block text-sm font-medium">
+          <label htmlFor="price" className="dark:text-black block text-sm font-medium">
             Price
           </label>
           <input
@@ -143,7 +140,7 @@ const AddProduct = () => {
 
         {/* Rating */}
         <div>
-          <label htmlFor="rating" className="block text-sm font-medium">
+          <label htmlFor="rating" className="dark:text-black block text-sm font-medium">
             Rating
           </label>
           <input
@@ -161,7 +158,7 @@ const AddProduct = () => {
 
         {/* Customization */}
         <div>
-          <label htmlFor="customization" className="block text-sm font-medium">
+          <label htmlFor="customization" className="dark:text-black block text-sm font-medium">
             Customization
           </label>
           <input
@@ -175,7 +172,7 @@ const AddProduct = () => {
 
         {/* Processing Time */}
         <div>
-          <label htmlFor="processingTime" className="block text-sm font-medium">
+          <label htmlFor="processingTime" className="dark:text-black block text-sm font-medium">
             Processing Time
           </label>
           <input
@@ -190,7 +187,7 @@ const AddProduct = () => {
 
         {/* Stock Status */}
         <div>
-          <label htmlFor="stockStatus" className="block text-sm font-medium">
+          <label htmlFor="stockStatus" className="dark:text-black block text-sm font-medium">
             Stock Status
           </label>
           <input
@@ -205,30 +202,30 @@ const AddProduct = () => {
 
         {/* User Email (Read-Only) */}
         <div>
-          <label htmlFor="userEmail" className="block text-sm font-medium">
+          <label htmlFor="userEmail" className="dark:text-black block text-sm font-medium">
             User Email
           </label>
           <input
             type="email"
             id="userEmail"
             name="userEmail"
-            value={loggedInUser.email}
-            className="mt-1 block w-full border border-gray-300 rounded-md bg-gray-100 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            value={user?.email || ""}
+            className="mt-1 block w-full dark:text-black border border-gray-300 rounded-md bg-gray-100 shadow-sm focus:ring-blue-500 focus:border-blue-500"
             readOnly
           />
         </div>
 
         {/* User Name (Read-Only) */}
         <div>
-          <label htmlFor="userName" className="block text-sm font-medium">
+          <label htmlFor="userName" className="dark:text-black block text-sm font-medium">
             User Name
           </label>
           <input
             type="text"
             id="userName"
             name="userName"
-            value={loggedInUser.name}
-            className="mt-1 block w-full border border-gray-300 rounded-md bg-gray-100 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            value={user?.displayName || ""}
+            className="mt-1 dark:text-black block w-full border border-gray-300 rounded-md bg-gray-100 shadow-sm focus:ring-blue-500 focus:border-blue-500"
             readOnly
           />
         </div>

@@ -6,12 +6,17 @@ import SignUp from "../components/SignUp";
 import AllProducts from "../pages/AllProducts";
 import UpdateProducts from "../pages/UpdateProducts";
 import ShowProduct from "../pages/ShowProduct";
+import Login from "../components/Login";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../components/ErrorPage";
+import MyProducts from "../pages/MyProducts";
 
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage />,
         children: [
 
             {
@@ -26,21 +31,29 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'addProduct',
-                element: <AddProducts></AddProducts>
+                element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
+            },
+            {
+                path: 'myproduct',
+                element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>
             },
             {
                 path: 'updateProduct/:id',
-                element: <UpdateProducts></UpdateProducts>,
+                element: <PrivateRoute><UpdateProducts></UpdateProducts></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path: 'showProduct/:id',
-                element: <ShowProduct></ShowProduct>,
+                element: <PrivateRoute><ShowProduct></ShowProduct></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path: 'signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
             },
         ]
 

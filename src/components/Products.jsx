@@ -12,11 +12,11 @@ const Products = () => {
   return (
     <div className="p-6 min-h-screen">
       {/* Header Section */}
-      <div className="text-center mb-10">
+      <div className="text-center mb-10 ">
         <h2 className="text-4xl font-extrabold text-orange-500 mb-4">
           Discover Our Latest Products
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg dark:text-white text-gray-600 max-w-2xl mx-auto">
           Explore a curated selection of top-quality products. Browse through the best deals and find exactly what you&apos;re looking for.
         </p>
       </div>
