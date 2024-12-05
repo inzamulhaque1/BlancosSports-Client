@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 const AllProducts = () => {
   const loadedProducts = useLoaderData();
   const [products, setProducts] = useState(loadedProducts);
-  const [isAscending, setIsAscending] = useState(true); // State to track sorting order
+  const [isAscending, setIsAscending] = useState(true); // State to track sorting order for price
   const [searchQuery, setSearchQuery] = useState(""); // State for the search input
 
   // Function to handle the search
@@ -15,31 +15,21 @@ const AllProducts = () => {
     setSearchQuery(query);
   };
 
-  // Effect to filter and sort products based on the search query
+  // Effect to filter products based on the search query (no sorting by name here)
   useEffect(() => {
     const filteredProducts = loadedProducts.filter((product) =>
       product.name.toLowerCase().includes(searchQuery)
     );
-
-    // Sort the filtered products by name
-    const sortedProducts = filteredProducts.sort((a, b) => {
-      if (isAscending) {
-        return a.name.localeCompare(b.name); // Sort alphabetically in ascending order
-      } else {
-        return b.name.localeCompare(a.name); // Sort alphabetically in descending order
-      }
-    });
-
-    setProducts(sortedProducts);
-  }, [searchQuery, isAscending, loadedProducts]); // Re-run whenever searchQuery or isAscending changes
+    setProducts(filteredProducts);
+  }, [searchQuery, loadedProducts]); // Re-run whenever searchQuery changes
 
   // Sort products by price
   const handleSort = () => {
     const sortedProducts = [...products].sort((a, b) => {
       if (isAscending) {
-        return a.price - b.price; // Sort ascending
+        return a.price - b.price; // Sort ascending by price
       } else {
-        return b.price - a.price; // Sort descending
+        return b.price - a.price; // Sort descending by price
       }
     });
     setProducts(sortedProducts);
