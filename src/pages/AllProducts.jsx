@@ -1,11 +1,37 @@
 import { useLoaderData } from "react-router-dom";
 import AllProductsTable from "../components/AllProductsTable";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa";
 
 const AllProducts = () => {
   const loadedProducts = useLoaderData();
   const [products, setProducts] = useState(loadedProducts);
   const [isAscending, setIsAscending] = useState(true); // State to track sorting order
+  const [searchQuery, setSearchQuery] = useState(""); // State for the search input
+
+  // Function to handle the search
+  const handleSearch = (event) => {
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query);
+  };
+
+  // Effect to filter and sort products based on the search query
+  useEffect(() => {
+    const filteredProducts = loadedProducts.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery)
+    );
+
+    // Sort the filtered products by name
+    const sortedProducts = filteredProducts.sort((a, b) => {
+      if (isAscending) {
+        return a.name.localeCompare(b.name); // Sort alphabetically in ascending order
+      } else {
+        return b.name.localeCompare(a.name); // Sort alphabetically in descending order
+      }
+    });
+
+    setProducts(sortedProducts);
+  }, [searchQuery, isAscending, loadedProducts]); // Re-run whenever searchQuery or isAscending changes
 
   // Sort products by price
   const handleSort = () => {
@@ -21,16 +47,26 @@ const AllProducts = () => {
   };
 
   return (
-    
-    <div className="w-11/12 md:w-9/12 mx-auto mt-2 space-y-5">
+    <div className="w-full md:w-11/12 lg:w-9/12 mx-auto mt-2 space-y-5">
+      <div className="flex flex-col sm:flex-row justify-between items-center sm:space-x-4 space-y-4 sm:space-y-0">
+        <h2 className="text-2xl font-bold mb-4 sm:mb-0">Product Table</h2>
 
-      
-      <div className="flex justify-between items-center">
-      <h2 className="text-2xl font-bold mb-4">Product Table</h2>
+        {/* Search Bar */}
+        <div className="relative w-full sm:w-auto">
+          <input
+            type="text"
+            placeholder="Search by name..."
+            value={searchQuery}
+            onChange={handleSearch}
+            className="w-full sm:w-auto p-3 pl-10 pr-4 rounded-full text-sm sm:text-base border border-orange-300 shadow-lg focus:ring-2 focus:ring-orange-500 outline-none transition duration-300"
+          />
+          <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        </div>
+
         {/* Sort button on the top right */}
         <button
           onClick={handleSort}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md transition duration-200 hover:bg-blue-600"
         >
           Sort by Price {isAscending ? "↑" : "↓"}
         </button>
@@ -38,7 +74,7 @@ const AllProducts = () => {
 
       {/* Responsive Table Wrapper */}
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse border border-gray-300  text-sm md:text-base">
+        <table className="w-full border-collapse border border-gray-300 text-sm md:text-base">
           <thead>
             <tr className="bg-gray-100">
               <th className="border border-gray-300 dark:text-black px-4 py-2 text-left">Name</th>

@@ -1,9 +1,32 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../providers/CartProvider";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import Swal from "sweetalert2"; // Import SweetAlert2
 
 const MyProducts = () => {
   const { cart, removeFromCart } = useCart();
+
+  // Function to handle the delete button click
+  const handleDeleteClick = (product) => {
+    // Show SweetAlert2 confirmation modal
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // If confirmed, remove the product from the cart
+        removeFromCart(product._id);
+
+        // Show success message
+        Swal.fire("Deleted!", "The product has been removed from your cart.", "success");
+      }
+    });
+  };
 
   return (
     <div className="p-4 w-11/12 md:w-9/12 mx-auto">
@@ -40,7 +63,7 @@ const MyProducts = () => {
                   </button>
                 </Link>
                 <button
-                  onClick={() => removeFromCart(product._id)}
+                  onClick={() => handleDeleteClick(product)} // Trigger SweetAlert2 modal
                   className="flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md transition duration-200"
                 >
                   <FaTrashAlt />
