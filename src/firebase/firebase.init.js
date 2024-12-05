@@ -7,12 +7,14 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD7sXAEYAQZrg_oFCPbRLu3vFbq6xcaqqQ",
-  authDomain: "blancos-sports.firebaseapp.com",
-  projectId: "blancos-sports",
-  storageBucket: "blancos-sports.appspot.com", // Corrected storageBucket value
-  messagingSenderId: "1098610350671",
-  appId: "1:1098610350671:web:bedc1280515aba583e283a"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
+
+
 };
 
 // Initialize Firebase
