@@ -52,7 +52,7 @@ const UpdateProducts = () => {
 
     // send data to server
 
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://assignment10-server-khaki.vercel.app/product/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

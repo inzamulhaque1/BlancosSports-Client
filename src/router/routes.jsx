@@ -22,12 +22,12 @@ const routes = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/product')
+                loader: () => fetch('https://assignment10-server-khaki.vercel.app/product')
             },
             {
                 path:'allProducts',
                 element: <AllProducts></AllProducts>,
-                loader: () => fetch('http://localhost:5000/product')
+                loader: () => fetch('https://assignment10-server-khaki.vercel.app/product')
             },
             {
                 path: 'addProduct',
@@ -40,12 +40,12 @@ const routes = createBrowserRouter([
             {
                 path: 'updateProduct/:id',
                 element: <PrivateRoute><UpdateProducts></UpdateProducts></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment10-server-khaki.vercel.app/product/${params.id}`)
             },
             {
                 path: 'showProduct/:id',
                 element: <PrivateRoute><ShowProduct></ShowProduct></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment10-server-khaki.vercel.app/product/${params.id}`)
             },
             {
                 path: 'signup',
