@@ -1,6 +1,6 @@
 # Assignment 10 - BlancosSports
 
-**Live Site URL: https://blancos-sports.firebaseapp.com/ 
+Live Site URL: https://blancos-sports.firebaseapp.com/ 
 
 alternative: https://blancos-sports.web.app/
 
@@ -29,10 +29,3 @@ sever site github: https://github.com/programming-hero-web-course2/b10-a10-serve
 - **React Icons** for a rich collection of customizable icons.
 
 ---
-
-## Installation Instructions
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/yourrepository.git
-
