@@ -1,8 +1,38 @@
-# React + Vite
+# Assignment 10 - BlancosSports
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site URL: https://blancos-sports.firebaseapp.com/ 
 
-Currently, two official plugins are available:
+alternative: https://blancos-sports.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+client site github: https://github.com/programming-hero-web-course2/b10-a10-client-side-inzamulhaque1
+
+sever site github: https://github.com/programming-hero-web-course2/b10-a10-server-side-inzamulhaque1
+
+
+---
+
+## Features
+
+- **User Authentication:** Secure login and sign-up functionality with email/password and Google authentication.
+- **Profile Management:** Users can update their profile, including their photo and personal details.
+- **Responsive Design:** Fully responsive layout ensuring seamless use across devices and screen sizes.
+- **Modern UI/UX:** Clean and intuitive interface built using Tailwind CSS for a visually appealing user experience.
+- **Dynamic Content:** Real-time updates for user profiles and interactive features, ensuring a dynamic browsing experience.
+
+---
+
+## Technologies Used
+
+- **React** for a component-based frontend architecture.
+- **Firebase** for authentication and backend services.
+- **Tailwind CSS** for modern styling and responsiveness.
+- **React Icons** for a rich collection of customizable icons.
+
+---
+
+## Installation Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/yourrepository.git
+
