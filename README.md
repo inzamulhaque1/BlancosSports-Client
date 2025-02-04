@@ -8,24 +8,41 @@ client site github: https://github.com/programming-hero-web-course2/b10-a10-clie
 
 sever site github: https://github.com/programming-hero-web-course2/b10-a10-server-side-inzamulhaque1
 
+# 🏏 Blancos Sports
+
+![Blancos Sports Logo](https://blancos-sports.web.app/assets/logo-bs-CljacQs2.png)
+
+🏆 **Blancos Sports** is an interactive cricket team management platform where users can select players, track performance, and experience the thrill of team building.
+
+🔗 **Live Demo:** [Blancos Sports](https://blancos-sports.web.app/)
 
 ---
 
-## Features
+## 🎯 Features
 
-- **User Authentication:** Secure login and sign-up functionality with email/password and Google authentication.
-- **Profile Management:** Users can update their profile, including their photo and personal details.
-- **Responsive Design:** Fully responsive layout ensuring seamless use across devices and screen sizes.
-- **Modern UI/UX:** Clean and intuitive interface built using Tailwind CSS for a visually appealing user experience.
-- **Dynamic Content:** Real-time updates for user profiles and interactive features, ensuring a dynamic browsing experience.
+✅ **Team Selection** – Pick your dream cricket squad.  
+✅ **Real-time Updates** – Stay updated with instant notifications.  
+✅ **User-Friendly UI** – Designed for smooth navigation and interaction.  
+✅ **Performance Insights** – Track player stats and team performance.  
+✅ **Mobile Responsive** – Works seamlessly on all devices.  
+✅ **Fast & Optimized** – Powered by Vite for blazing performance.  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js + Vite + Tailwind CSS  
+- **State Management:** Context API  
+- **Notifications:** React-Toastify  
+- **Deployment:** Firebase Hosting  
 
 ---
 
-## Technologies Used
+## 🚀 Getting Started
 
-- **React** for a component-based frontend architecture.
-- **Firebase** for authentication and backend services.
-- **Tailwind CSS** for modern styling and responsiveness.
-- **React Icons** for a rich collection of customizable icons.
+Follow these steps to run **Blancos Sports** locally:
 
----
+### 🔹 Clone the Repository:
+```bash
+git clone https://github.com/your-username/blancos-sports.git
+cd blancos-sports
