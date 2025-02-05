@@ -15,8 +15,10 @@ Explore Blancos Sports live:
 
 ---
 
-## 📸 Project Screenshot
-![Blancos Sports Screenshot](https://prnt.sc/j8O5iaqJADOx?text=Blancos+Sports+Screenshot) 
+## 📸 Project Screenshots
+![Home Page](https://image.prntscr.com/image/j8O5iaqJADOx/Home_Page.png)
+![Player Selection](https://image.prntscr.com/image/HHLycB25TC0y/Player_Selection.png)
+![Performance Tracking](https://image.prntscr.com/image/QjMEh5_EN3qe/Performance_Tracking.png)
 
 ---
 
@@ -121,15 +123,6 @@ node server.js
 - **ESLint:** Enforcing code standards.
 - **PostCSS:** Transforming styles.
 
----
-
-## 👨‍💼 Contributors
-Special thanks to all contributors who helped build Blancos Sports!
-
----
-
-## 💎 License
-This project is licensed under the MIT License.
 
 ---
 
@@ -170,4 +163,6 @@ This project is licensed under the MIT License.
 - **[Server GitHub Repository](https://github.com/programming-hero-web-course2/b10-a10-server-side-inzamulhaque1)**
 
 Enjoy building your dream cricket team with **Blancos Sports**! 🏀
+
+
 
