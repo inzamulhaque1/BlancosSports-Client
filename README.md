@@ -17,8 +17,10 @@ Explore Blancos Sports live:
 
 ## 📸 Project Screenshots
 ![Home Page](https://github.com/inzamulhaque1/BlancosSports-Client/blob/main/src/assets/blancos1.png)
-![Player Selection](https://image.prntscr.com/image/HHLycB25TC0y/Player_Selection.png)
-![Performance Tracking](https://image.prntscr.com/image/QjMEh5_EN3qe/Performance_Tracking.png)
+![Player Selection](https://github.com/inzamulhaque1/BlancosSports-Client/blob/main/src/assets/blancos2.png)
+![Performance Tracking](https://github.com/inzamulhaque1/BlancosSports-Client/blob/main/src/assets/blancos3.png)
+!(https://github.com/inzamulhaque1/BlancosSports-Client/blob/main/src/assets/blancos4.png)
+!(https://github.com/inzamulhaque1/BlancosSports-Client/blob/main/src/assets/blancos5.png)
 
 ---
 
