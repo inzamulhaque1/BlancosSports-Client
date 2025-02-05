@@ -16,7 +16,7 @@ Explore Blancos Sports live:
 ---
 
 ## 📸 Project Screenshots
-![Home Page](https://image.prntscr.com/image/j8O5iaqJADOx/Home_Page.png)
+![Home Page](https://github.com/inzamulhaque1/BlancosSports-Client/blob/main/src/assets/blancos1.png)
 ![Player Selection](https://image.prntscr.com/image/HHLycB25TC0y/Player_Selection.png)
 ![Performance Tracking](https://image.prntscr.com/image/QjMEh5_EN3qe/Performance_Tracking.png)
 
