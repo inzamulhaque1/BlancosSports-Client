@@ -16,7 +16,7 @@ Explore Blancos Sports live:
 ---
 
 ## 📸 Project Screenshot
-![Blancos Sports Screenshot](https://via.placeholder.com/800x400?text=Blancos+Sports+Screenshot)
+![Blancos Sports Screenshot](https://prnt.sc/j8O5iaqJADOx?text=Blancos+Sports+Screenshot) 
 
 ---
 
